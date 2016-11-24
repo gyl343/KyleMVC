@@ -1,0 +1,24 @@
+ErrorDocument 404 /404.html
+Options -Indexes
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+
+
+## BEGIN WordPress
+#<IfModule mod_rewrite.c>
+#RewriteEngine On
+##Redirect
+#Options +FollowSymLinks
+#RewriteCond %{HTTP_HOST}   ^0356.com$
+##RewriteCond %{HTTP_HOST}   !^$
+#RewriteRule ^(.*)$ http://www.0356.com/$1 [R=301,L]
+##Rewrite(blog)
+##RewriteCond %{REQUEST_FILENAME} !-f
+##RewriteCond %{REQUEST_FILENAME} !-d
+##RewriteRule ^blog/.* /blog/index.php [L]
+##RewriteRule . -
+#</IfModule>
+## END WordPress
