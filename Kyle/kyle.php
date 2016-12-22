@@ -31,7 +31,13 @@ try
     {
         //执行该方法
         $result = $action->invoke($controller);
+        Layout::start();
         $result->executeResult();
+        Layout::end();
+        if (!isNullOrEmpty(Layout::get()))
+            require Layout::get();
+        else
+            echo Layout::$content;
     }
     else
     {
@@ -57,7 +63,13 @@ try
         //======================================
         //执行该方法
         $result = $action->invokeArgs($controller, $params);
+        Layout::start();
         $result->executeResult();
+        Layout::end();
+        if (!isNullOrEmpty(Layout::get()))
+            require Layout::get();
+        else
+            echo Layout::$content;
     }
 }
 catch (Exception $e)
