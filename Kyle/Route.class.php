@@ -365,9 +365,7 @@ class Route
             }
             else if ($match[0] == RegexRouteEnum::Variable)
             {
-                if (!isset($p[$match[1]['variable']]))
-                    $uri .= '/' . '0';
-                else
+                if (isset($p[$match[1]['variable']]))
                 {
                     $uri .= '/' . $p[$match[1]['variable']];
                     unset($p[$match[1]['variable']]);

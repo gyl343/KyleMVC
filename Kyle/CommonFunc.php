@@ -25,3 +25,15 @@ function request_uri()
     }
     return $uri;
 }
+
+/**
+ * 判断字符串是否为空或null
+ * @param $str
+ * @return bool
+ */
+function isNullOrEmpty($str)
+{
+    if ($str == '' || $str == null)
+        return true;
+    return false;
+}
