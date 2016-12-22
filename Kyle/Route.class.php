@@ -428,6 +428,6 @@ class Route
             }
         }
         $str = substr($str, 0, strlen($str) - 1);
-        return $uri . $str;
+        return URL_HEADER . $uri . $str;
     }
 }
