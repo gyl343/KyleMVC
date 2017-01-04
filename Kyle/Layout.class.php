@@ -69,6 +69,8 @@ class Layout
      */
     public static function renderJavaScriptByUrl($renderName, $jsUrl)
     {
+        if (!isset(self::$js[$renderName]))
+            self::$js[$renderName] = '';
         $str = "<script type=\"javascript\" src=\"${jsUrl}\"></script>";
         self::$js[$renderName] .= $str;
     }
@@ -81,6 +83,8 @@ class Layout
      */
     public static function renderCss($renderName, $cssUrl)
     {
+        if (!isset(self::$css[$renderName]))
+            self::$css[$renderName] = '';
         $str = "<link type=\"text/css\" href=\"${cssUrl}\" />";
         self::$css[$renderName] .= $str;
     }
